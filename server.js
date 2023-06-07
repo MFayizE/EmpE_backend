@@ -7,7 +7,7 @@ const {errorHandler} = require('./middleware/errorMiddleware')
 const multer = require('multer');
 
 const PORT = process.env.PORT || 6000
-
+app.use('/uploads', express.static('uploads'));
 // connect to DB
 connectDB()
 const app = express()

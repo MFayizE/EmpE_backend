@@ -20,7 +20,6 @@ const userSchema = mongoose.Schema({
     //     required: [true, 'Please add a role']
     // },
     imageURL: {
-        data:Buffer,
         type: String,
     },
 },
