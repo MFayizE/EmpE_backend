@@ -32,6 +32,7 @@ const User = require('../models/userModel')
     })
 
     if (req.file) {
+        console.log('req.file: ', req.file);
         user.imageURL = req.file.path; // Set the imageURL field to the path of the uploaded file
         await user.save();
       }
