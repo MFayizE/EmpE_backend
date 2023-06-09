@@ -6,7 +6,7 @@ const dotenv = require('dotenv').config()
 const {errorHandler} = require('./middleware/errorMiddleware')
 const multer = require('multer');
 
-const PORT = process.env.PORT || 6000
+const PORT = process.env.PORT || 5000
 // connect to DB
 connectDB()
 const app = express()
@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: false}))
 app.use('/uploads', express.static('uploads'));
 
 app.use('/api/users', require('./routes/userRoutes'))
-
+app.use('/api/performance', require('./routes/performanceRoutes'))
 
 
 

@@ -15,10 +15,15 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add a password']
     },
-    // role: {
-    //     type: String,
-    //     required: [true, 'Please add a role']
-    // },
+    role: {
+        type: String,
+        enum: ['HR', 'Tester', 'Developer', 'UI'],
+        required: true,
+        default: 'Developer'
+    },
+    salary: {
+        type:Number
+    },
     imageURL: {
         type: String,
     },

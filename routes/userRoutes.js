@@ -28,13 +28,14 @@ const storage = multer.diskStorage({
     fileFilter: fileFilter
   });
   
-const{RegisterUser,LoginUser, getMe} = require('../controllers/userController')
+const{RegisterUser,LoginUser, getMe,listEmployees} = require('../controllers/userController')
 
 const {protect} = require('../middleware/authMiddleware')
 
 router.post('/register',upload.single('profileImage'), RegisterUser)
 router.post('/login', LoginUser)
 router.get('/me',protect, getMe)
+router.get('/list',protect, listEmployees)
 
 
 module.exports = router
